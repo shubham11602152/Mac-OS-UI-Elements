@@ -1,0 +1,147 @@
+#dock {
+  --size: 60px;
+  --space1: 15px;
+  --space2: 4px;
+  --border-radius: 31px;
+  --translateY: 20px;
+  --magnification: 1.5;
+  --base-magnification: 20px;
+  position: fixed;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+@media only screen and (max-width: 600px) {
+  #dock {
+    --size: 30px;
+    --translateY: 10px;
+    --base-magnification: 10px;
+  }
+}
+
+#dock ul {
+  display: flex;
+  align-items: flex-end;
+  /* gap: var(--space2); */
+  padding: var(--space2) var(--space1);
+  border-radius: var(--border-radius);
+  transition-duration: 0.3s;
+  background-color: #25252550;
+  backdrop-filter: blur(10px);
+  border: 1px solid #ffffff20;
+}
+
+#dock ul > li {
+  position: relative;
+  cursor: pointer;
+}
+
+#dock ul > li > a {
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  transition-duration: 0.2s;
+}
+
+#dock ul > li > a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#dock ul > li a::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  top: -32px;
+  transform: translateX(-50%) translateY(50%) translateZ(1px);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 0.4rem;
+  width: fit-content;
+  text-transform: capitalize;
+  opacity: 0;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition-property: opacity, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  background-color: #252525ee;
+  border: 1px solid #ffffff20;
+}
+
+#dock ul > li:hover a::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0%);
+}
+
+#dock ul > li a {
+  position: relative;
+}
+
+#dock ul > li:hover a {
+  width: calc(var(--size) + (var(--base-magnification) * var(--magnification)));
+  height: calc(
+    var(--size) + (var(--base-magnification) * var(--magnification))
+  );
+  margin-top: calc(-30px * var(--magnification));
+  transform: translateY(calc(var(--translateY) * -1));
+}
+
+#dock ul > li:active a {
+  transform: scale(0.7);
+}
+
+/* LEFT */
+#dock ul > li:has(+ li:hover) a {
+  width: calc(
+    var(--size) + (var(--base-magnification) * var(--magnification) * 2 / 3) +
+      var(--dock-offset-left, 0px)
+  );
+  height: calc(
+    var(--size) + (var(--base-magnification) * var(--magnification) * 2 / 3) +
+      var(--dock-offset-left, 0px)
+  );
+  margin-top: calc(-20px * var(--magnification));
+  transform: translateY(calc(var(--translateY) * -2 / 3));
+}
+#dock ul > li:has(+ li + li:hover) a {
+  width: calc(
+    var(--size) + (var(--base-magnification) * var(--magnification) * 1 / 3) +
+      var(--dock-offset-left, 0px)
+  );
+  height: calc(
+    var(--size) + (var(--base-magnification) * var(--magnification) * 1 / 3) +
+      var(--dock-offset-left, 0px)
+  );
+  margin-top: calc(-10px * var(--magnification));
+  transform: translateY(
+    calc(var(--translateY) * -1 / 3) + var(--dock-offset-left, 0px)
+  );
+}
+
+/* RIGHT */
+#dock ul > li:hover + li a {
+  width: calc(
+    var(--size) + (var(--base-magnification) * var(--magnification) * 2 / 3) +
+      var(--dock-offset-right, 0px)
+  );
+  height: calc(
+    var(--size) + (var(--base-magnification) * var(--magnification) * 2 / 3) +
+      var(--dock-offset-right, 0px)
+  );
+  margin-top: calc(-20px * var(--magnification));
+  transform: translateY(calc(var(--translateY) * -2 / 3));
+}
+#dock ul > li:hover + li + li a {
+  width: calc(
+    var(--size) + (var(--base-magnification) * var(--magnification) * 1 / 3) +
+      var(--dock-offset-right, 0px)
+  );
+  height: calc(
+    var(--size) + (var(--base-magnification) * var(--magnification) * 1 / 3) +
+      var(--dock-offset-right, 0px)
+  );
+  margin-top: calc(-10px * var(--magnification));
+  transform: translateY(calc(var(--translateY) * -1 / 3));
+}
