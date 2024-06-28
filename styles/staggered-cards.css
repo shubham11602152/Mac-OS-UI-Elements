@@ -1,0 +1,102 @@
+.staggered_img {
+  --anim-duration: 450ms;
+  --opacity-duration: 130ms;
+  display: grid;
+  grid-template-columns: repeat(3, 0.5em);
+}
+.staggered_img > div {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.staggered_img > div:not(:last-child):hover {
+  animation: zindex-up 500ms ease-out both alternate;
+}
+
+.staggered_img > div:not(:last-child):hover img {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  animation: shuffle-out 500ms ease-out both alternate;
+}
+
+@keyframes shuffle-out {
+  0% {
+    z-index: 0;
+    transform: translateX(0%) scale(1);
+    filter: blur(5px);
+  }
+  50% {
+    transform: translateX(-100%) scale(1);
+  }
+  100% {
+    z-index: 1000;
+    transform: translateX(0%) scale(1);
+    filter: blur(0px);
+  }
+}
+@keyframes zindex-up {
+  0% {
+    z-index: 0;
+  }
+  50% {
+    z-index: 0;
+  }
+  100% {
+    z-index: 1000;
+  }
+}
+
+.staggered_img > div:nth-child(1) img {
+  animation-delay: calc(var(--anim-duration) * 1 / 3),
+    calc(var(--opacity-duration) * 1 / 3);
+  z-index: 1000;
+}
+
+.staggered_img > div:nth-child(2) img {
+  animation-delay: calc(var(--anim-duration) * 2 / 3),
+    calc(var(--opacity-duration) * 2 / 3);
+}
+
+.staggered_img > div:nth-child(3) img {
+  animation-delay: calc(var(--anim-duration) * 3 / 3),
+    calc(var(--opacity-duration) * 3 / 3);
+}
+
+.staggered_img > div:nth-of-type(odd) {
+  transform: rotate(-5deg);
+}
+.staggered_img > div:nth-of-type(even) {
+  transform: rotate(5deg);
+}
+
+.staggered_img > div img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateX(0) scale(0);
+  opacity: 0;
+  animation: scale-out var(--anim-duration) 0s
+      cubic-bezier(0.3, 0.71, 0.48, 1.31) forwards,
+    fade-in var(--opacity-duration) 0s ease-out forwards;
+  border-radius: 15%;
+  outline: 0.25rem solid #c5c5c5;
+  box-shadow: -2px 3px 8px #000000a8;
+  transition: all 0.5s ease;
+}
+
+@keyframes scale-out {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

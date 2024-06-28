@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/ios-button.css" />
+    <link rel="stylesheet" href="styles/staggered-cards.css" />
     <link rel="stylesheet" href="styles/logo-marquee.css" />
     <link rel="stylesheet" href="styles/dock.css" />
   </head>
@@ -36,7 +37,7 @@
 
     body {
       width: 100%;
-      height: 100vh;
+      min-height: 100vh;
       display: grid;
       place-items: center;
       background-color: black;
@@ -83,11 +84,18 @@
 
     .inlineImg img:first-child {
       z-index: 1;
+      background-image: linear-gradient(
+        to bottom left,
+        rgb(123, 220, 253),
+        rgb(248, 200, 28),
+        rgb(83, 126, 255)
+      );
     }
 
     .inlineImg img:last-child {
       margin-left: -15%;
       animation-direction: reverse;
+      animation-duration: 9.5s;
     }
 
     @keyframes rotate-anim {
@@ -104,6 +112,10 @@
         font-size: 2rem;
         line-height: 1em;
       }
+      .staggered_img > div {
+        width: 2em;
+        height: 2em;
+      }
     }
   </style>
   <body>
@@ -111,14 +123,10 @@
       <div>
         Design &
         <input type="checkbox" data-direction="vertical" />
-        Dev Bros
+        Dev
         <div class="inlineImg">
-          <img
-            src="https://framerusercontent.com/images/THDR3QoVKLxz9FNNlV2kUCedhWw.png"
-          />
-          <img
-            src="https://framerusercontent.com/images/vvvHNJAg4p81rMG7wrdAlcdZ8.png"
-          />
+          <img src="assets/images/20230801_192409-removebg-preview (4).png" />
+          <img src="assets/images/20230801_192409-removebg-preview (3).png" />
         </div>
       </div>
       <div>
@@ -215,12 +223,30 @@
       <div>
         for a
         <input type="checkbox" data-shape="square" />
-        Decade
+        year
+        <div class="staggered_img">
+          <div>
+            <img
+              src="assets/images/20230801_192409-removebg-preview (1).png"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="assets/images/20230801_192409-removebg-preview (2).png"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="assets/images/20230801_192409-removebg-preview (3).png"
+              alt=""
+            />
+          </div>
+        </div>
       </div>
     </h1>
-    <section>
-      <div></div>
-    </section>
+    <section></section>
     <div id="dock">
       <ul>
         <li>

@@ -24,3 +24,9 @@
   align-items: center;
   color: #ffffffd2;
 }
+
+@media only screen and (max-width: 550px) {
+  .infinitLogo {
+    width: 80px;
+  }
+}
