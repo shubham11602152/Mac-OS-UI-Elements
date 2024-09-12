@@ -15,11 +15,17 @@
   grid-template-rows: repeat(3, 66px);
 }
 
-.notification__wrapper:hover .notification:nth-last-child(1),
+.notification__wrapper:hover .notification {
+  /* display: flex; */
+  transform: scale(1);
+}
+
+/* .notification__wrapper:hover .notification:nth-last-child(1),
 .notification__wrapper:hover .notification:nth-last-child(2),
 .notification__wrapper:hover .notification:nth-last-child(3) {
   transform: scale(1);
-}
+} */
+
 .notification {
   position: relative;
   height: min-content;

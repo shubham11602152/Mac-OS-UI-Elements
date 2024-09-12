@@ -10,11 +10,16 @@
       href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="/wss/fonts?families=SF+Pro,v3|SF+Pro+Icons,v3"
+    />
     <link rel="stylesheet" href="styles/ios-button.css" />
     <link rel="stylesheet" href="styles/staggered-cards.css" />
     <link rel="stylesheet" href="styles/logo-marquee.css" />
     <link rel="stylesheet" href="styles/dock.css" />
     <link rel="stylesheet" href="styles/notification.css" />
+    <link rel="stylesheet" href="styles/accordion.css" />
   </head>
   <style>
     :root {
@@ -278,6 +283,8 @@
           Magic
         </div>
         <div>
+          <!-- TODO : WIP dynamically adding notigfications on button click -->
+          <!-- <button class="notification-btn">Add Notifications</button> -->
           for a
           <input type="checkbox" data-shape="square" />
           year
@@ -303,6 +310,21 @@
           </div>
         </div>
       </h1>
+
+      <svg height="200" width="350" xmlns="http://www.w3.org/2000/svg">
+        <path
+          id="lineAC"
+          d="M 30 180 q 150 -250 300 0"
+          stroke="blue"
+          stroke-width="2"
+          fill="none"
+        />
+        <text style="fill: #fff; font-size: 25px">
+          <textPath href="#lineAC" startOffset="50">
+            Mac OS styled components
+          </textPath>
+        </text>
+      </svg>
       <p>
         <br />
         1. Introduction to macOS macOS, the operating system developed by Apple
@@ -401,6 +423,416 @@
         reliable and cutting-edge platform for millions of users worldwide.
       </p>
     </section>
+
+    <section>
+      <div class="accordion-wrapper">
+        <ul
+          class="accordion"
+          data-component-list="Accordion"
+          data-accordion=""
+          role="list"
+          style=""
+        >
+          <li
+            class="accordion-item column expanded"
+            data-accordion-item="accordion-item-mac"
+          >
+            <h3 class="accordion-title">
+              <button
+                class="accordion-button"
+                data-accordion-trigger=""
+                aria-controls="accordion-item-mac-tray"
+                id="accordion-item-mac-button"
+                data-analytics-intrapage-link=""
+                data-analytics-title="open accordion - iphone and mac"
+                aria-expanded="true"
+              >
+                <span class="accordion-title-text"> iPhone and Mac</span>
+                <span class="accordion-icon" data-accordion-icon=""
+                  ><svg class="accordion-icon-svg" viewBox="0 0 17 8.85">
+                    <polyline
+                      data-accordion-icon-shape=""
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="none"
+                      fill-rule="evenodd"
+                      points="15 7.72 8.5 1.13 2 7.72"
+                    >
+                      <animate
+                        data-accordion-animate="expand"
+                        attributeName="points"
+                        values="15 1.13 8.5 7.72 2 1.13;
+        15.85 4.42 8.5 4.42 1.15 4.42;
+        15 7.72 8.5 1.13 2 7.72"
+                        dur="320ms"
+                        begin="indefinite"
+                        fill="freeze"
+                        keyTimes="0;
+        0.5;
+        1"
+                        calcMode="spline"
+                        keySplines="0.12, 0, 0.38, 0;
+          0.2, 1, 0.68, 1"
+                      ></animate>
+                      <animate
+                        data-accordion-animate="collapse"
+                        attributeName="points"
+                        values="15 7.72 8.5 1.13 2 7.72;
+        15.85 4.42 8.5 4.42 1.15 4.42;
+        15 1.13 8.5 7.72 2 1.13"
+                        dur="320ms"
+                        begin="indefinite"
+                        fill="freeze"
+                        keyTimes="0;
+        0.5;
+        1"
+                        calcMode="spline"
+                        keySplines="0.2, 0, 0.68, 0;
+          0.2, 1, 0.68, 1"
+                      ></animate>
+                    </polyline></svg
+                ></span>
+              </button>
+            </h3>
+            <div
+              id="accordion-item-mac-tray"
+              aria-labelledby="accordion-item-mac-button"
+              class="accordion-tray"
+              data-accordion-tray=""
+            >
+              <!-- Accordion Content -->
+              <div class="accordion-content" data-accordion-content="">
+                <div class="">
+                  <p class="accordion-paragraph-text">
+                    With iPhone Mirroring, you can view your iPhone screen on
+                    your Mac and control it without picking up your phone.
+                    Continuity features also let you answer calls or messages
+                    right from your Mac. You can even copy images, video, or
+                    text from your iPhone and paste it all into a different app
+                    on your Mac. And with iCloud, you can access your files from
+                    either device.
+                  </p>
+                </div>
+                <div class="image-container">
+                  <picture
+                    id="overview-augment-mac-1"
+                    class="overview-augment-mac template-image loaded"
+                    data-lazy=""
+                    data-download-area-keyframe='{"start": "a0t - 200vh", "end": "a0b + 100vh", "anchors": [".accordion"]}'
+                    data-picture-loaded=""
+                  >
+                    <img
+                      src="https://www.apple.com/v/iphone/home/bw/images/overview/augment/mac__b2km5lqjzk1y_large.jpg"
+                      alt="The same messages open on both MacBook Pro and iPhone 16."
+                    />
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class="accordion-item column collapsed"
+            data-accordion-item="accordion-item-watch"
+          >
+            <h3 class="accordion-title">
+              <button
+                class="accordion-button"
+                data-accordion-trigger=""
+                aria-controls="accordion-item-watch-tray"
+                id="accordion-item-watch-button"
+                data-analytics-intrapage-link=""
+                data-analytics-title="open accordion - iphone and apple watch"
+                aria-expanded="false"
+                data-analytics-click="prop3:open accordion - iphone and apple watch"
+              >
+                <span class="accordion-title-text">
+                  iPhone and Apple&nbsp;Watch</span
+                >
+                <span class="accordion-icon" data-accordion-icon=""
+                  ><svg class="accordion-icon-svg" viewBox="0 0 17 8.85">
+                    <polyline
+                      data-accordion-icon-shape=""
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="none"
+                      fill-rule="evenodd"
+                      points="15 1.13 8.5 7.72 2 1.13"
+                    >
+                      <animate
+                        data-accordion-animate="expand"
+                        attributeName="points"
+                        values="15 1.13 8.5 7.72 2 1.13;
+        15.85 4.42 8.5 4.42 1.15 4.42;
+        15 7.72 8.5 1.13 2 7.72"
+                        dur="320ms"
+                        begin="indefinite"
+                        fill="freeze"
+                        keyTimes="0;
+        0.5;
+        1"
+                        calcMode="spline"
+                        keySplines="0.12, 0, 0.38, 0;
+          0.2, 1, 0.68, 1"
+                      ></animate>
+                      <animate
+                        data-accordion-animate="collapse"
+                        attributeName="points"
+                        values="15 7.72 8.5 1.13 2 7.72;
+        15.85 4.42 8.5 4.42 1.15 4.42;
+        15 1.13 8.5 7.72 2 1.13"
+                        dur="320ms"
+                        begin="indefinite"
+                        fill="freeze"
+                        keyTimes="0;
+        0.5;
+        1"
+                        calcMode="spline"
+                        keySplines="0.2, 0, 0.68, 0;
+          0.2, 1, 0.68, 1"
+                      ></animate>
+                    </polyline></svg
+                ></span>
+              </button>
+            </h3>
+            <div
+              id="accordion-item-watch-tray"
+              aria-labelledby="accordion-item-watch-button"
+              class="accordion-tray"
+              data-accordion-tray=""
+              aria-hidden="true"
+            >
+              <!-- Accordion Content -->
+              <div class="accordion-content" data-accordion-content="">
+                <div class="">
+                  <p class="accordion-paragraph-text">
+                    Misplaced your iPhone? The latest Apple&nbsp;Watch models
+                    can show you its approximate distance and direction.<sup
+                      class="footnote footnote-number"
+                      ><a
+                        href="#footnote-15"
+                        aria-label="Footnote 13"
+                        data-modal-close=""
+                        tabindex="-1"
+                        >13</a
+                      ></sup
+                    >
+                    To set up a group photo on your iPhone, join the group and
+                    use Apple&nbsp;Watch as a viewfinder to snap the shot. And
+                    when you take a call on your Apple&nbsp;Watch, just tap your
+                    iPhone to continue the conversation there.
+                  </p>
+                </div>
+                <div class="image-container">
+                  <picture
+                    id="overview-augment-watch-1"
+                    class="overview-augment-watch template-image loaded"
+                    data-lazy=""
+                    data-download-area-keyframe='{"start": "a0t - 200vh", "end": "a0b + 100vh", "anchors": [".accordion"]}'
+                    data-picture-loaded=""
+                  >
+                    <img
+                      src="https://www.apple.com/v/iphone/home/bw/images/overview/augment/watch__dkk6to52k7ma_large.jpg"
+                      alt="The same messages open on both MacBook Pro and iPhone 16."
+                    />
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class="accordion-item column collapsed"
+            data-accordion-item="accordion-item-airpods"
+          >
+            <h3 class="accordion-title">
+              <button
+                class="accordion-button"
+                data-accordion-trigger=""
+                aria-controls="accordion-item-airpods-tray"
+                id="accordion-item-airpods-button"
+                data-analytics-intrapage-link=""
+                data-analytics-title="open accordion - iphone and airpods"
+                aria-expanded="false"
+                data-analytics-click="prop3:open accordion - iphone and airpods"
+              >
+                <span class="accordion-title-text"> iPhone and AirPods</span>
+                <span class="accordion-icon" data-accordion-icon=""
+                  ><svg class="accordion-icon-svg" viewBox="0 0 17 8.85">
+                    <polyline
+                      data-accordion-icon-shape=""
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="none"
+                      fill-rule="evenodd"
+                      points="15 1.13 8.5 7.72 2 1.13"
+                    >
+                      <animate
+                        data-accordion-animate="expand"
+                        attributeName="points"
+                        values="15 1.13 8.5 7.72 2 1.13;
+        15.85 4.42 8.5 4.42 1.15 4.42;
+        15 7.72 8.5 1.13 2 7.72"
+                        dur="320ms"
+                        begin="indefinite"
+                        fill="freeze"
+                        keyTimes="0;
+        0.5;
+        1"
+                        calcMode="spline"
+                        keySplines="0.12, 0, 0.38, 0;
+          0.2, 1, 0.68, 1"
+                      ></animate>
+                      <animate
+                        data-accordion-animate="collapse"
+                        attributeName="points"
+                        values="15 7.72 8.5 1.13 2 7.72;
+        15.85 4.42 8.5 4.42 1.15 4.42;
+        15 1.13 8.5 7.72 2 1.13"
+                        dur="320ms"
+                        begin="indefinite"
+                        fill="freeze"
+                        keyTimes="0;
+        0.5;
+        1"
+                        calcMode="spline"
+                        keySplines="0.2, 0, 0.68, 0;
+          0.2, 1, 0.68, 1"
+                      ></animate>
+                    </polyline></svg
+                ></span>
+              </button>
+            </h3>
+            <div
+              id="accordion-item-airpods-tray"
+              aria-labelledby="accordion-item-airpods-button"
+              class="accordion-tray"
+              data-accordion-tray=""
+              aria-hidden="true"
+            >
+              <!-- Accordion Content -->
+              <div class="accordion-content" data-accordion-content="">
+                <div class="">
+                  <p class="accordion-paragraph-text">
+                    Set up AirPods on iPhone with just a tap. You’ll love
+                    Adaptive Audio, which automatically tailors the noise
+                    control for you to provide the best listening experience
+                    across different environments and interactions throughout
+                    the day.
+                  </p>
+                </div>
+                <div class="image-container">
+                  <picture
+                    id="overview-augment-airpods-1"
+                    class="overview-augment-airpods template-image loaded"
+                    data-lazy=""
+                    data-download-area-keyframe='{"start": "a0t - 200vh", "end": "a0b + 100vh", "anchors": [".accordion"]}'
+                    data-picture-loaded=""
+                  >
+                    <img
+                      src="https://www.apple.com/v/iphone/home/bw/images/overview/augment/airpods__cmw5fm88hrma_large.jpg"
+                      alt="The same messages open on both MacBook Pro and iPhone 16."
+                    />
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="accord-wrapper">
+        <label for="accordion1" class="accordions">
+          <input type="radio" name="name" id="accordion1" checked />
+          <button class="accordion-button">
+            <h3>IPhone 16</h3>
+            <span>+</span>
+          </button>
+          <div class="accordion-content-wrapper">
+            <div class="accordion-content">
+              <p>
+                Set up AirPods on iPhone with just a tap. You’ll love Adaptive
+                Audio, which automatically tailors the noise control for you to
+                provide the best listening experience across different
+                environments and interactions throughout the day.
+              </p>
+            </div>
+          </div>
+        </label>
+        <label for="accordion3" class="accordions">
+          <input type="radio" name="name" id="accordion3" />
+          <button class="accordion-button">
+            <h3>IPhone 14</h3>
+            <span>+</span>
+          </button>
+          <div class="accordion-content-wrapper">
+            <div class="accordion-content">
+              <p>
+                Set up AirPods on iPhone with just a tap. You’ll love Adaptive
+                Audio, which automatically tailors the noise control for you to
+                provide the best listening experience across different
+                environments and interactions throughout the day.Set up AirPods
+                on iPhone with just a tap. You’ll love Adaptive Audio, which
+                automatically tailors the noise control for you to provide the
+                best listening experience across different environments and
+                interactions throughout the day.
+              </p>
+            </div>
+          </div>
+        </label>
+        <label for="accordion2" class="accordions">
+          <input type="radio" name="name" id="accordion2" />
+          <button class="accordion-button">
+            <h3>IPhone 15</h3>
+            <span>+</span>
+          </button>
+          <div class="accordion-content-wrapper">
+            <div class="accordion-content">
+              <p>
+                Set up AirPods on iPhone with just a tap. You’ll love Adaptive
+                Audio, which automatically tailors the noise control for you to
+                provide the best listening experience across different
+                environments and interactions throughout the day.Set up AirPods
+                on iPhone with just a tap. You’ll love Adaptive Audio, which
+                automatically tailors the noise control for you to provide the
+                best listening experience across different environments and
+                interactions throughout the day.
+              </p>
+              <p>
+                Set up AirPods on iPhone with just a tap. You’ll love Adaptive
+                Audio, which automatically tailors the noise control for you to
+                provide the best listening experience across different
+                environments and interactions throughout the day.Set up AirPods
+                on iPhone with just a tap. You’ll love Adaptive Audio, which
+                automatically tailors the noise control for you to provide the
+                best listening experience across different environments and
+                interactions throughout the day.
+              </p>
+              <p>
+                Set up AirPods on iPhone with just a tap. You’ll love Adaptive
+                Audio, which automatically tailors the noise control for you to
+                provide the best listening experience across different
+                environments and interactions throughout the day.Set up AirPods
+                on iPhone with just a tap. You’ll love Adaptive Audio, which
+                automatically tailors the noise control for you to provide the
+                best listening experience across different environments and
+                interactions throughout the day.
+              </p>
+              <p>
+                Set up AirPods on iPhone with just a tap. You’ll love Adaptive
+                Audio, which automatically tailors the noise control for you to
+                provide the best listening experience across different
+                environments and interactions throughout the day.Set up AirPods
+                on iPhone with just a tap. You’ll love Adaptive Audio, which
+                automatically tailors the noise control for you to provide the
+                best listening experience across different environments and
+                interactions throughout the day.
+              </p>
+            </div>
+          </div>
+        </label>
+      </div>
+    </section>
     <div id="dock">
       <ul>
         <li>
@@ -496,4 +928,6 @@
   </body>
   <script src="scripts/logo-marquee.js" defer></script>
   <script src="scripts/dock.js" defer></script>
+  <!-- <script src="scripts/notification.js" defer></script> -->
+  <script src="scripts/accordion.js" defer></script>
 </html>

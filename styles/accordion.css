@@ -1,0 +1,196 @@
+.accordion-wrapper {
+  --accordion-border-color: rgb(210, 210, 215);
+  --sk-headline-text-color: rgb(29, 29, 31);
+  --sk-body-text-color: rgb(29, 29, 31);
+  --sk-headline-text-color: rgb(29, 29, 31);
+
+  --accordion-button-padding-top: 1em;
+  --accordion-button-padding-bottom: 1em;
+  --accordion-icon-color: rgb(134, 134, 139);
+  --accordion-icon-color-hover: rgb(110, 110, 115);
+  --accordion-icon-width: 1em;
+  --accordion-icon-height: auto;
+  --accordion-icon-stroke-width: 2.25;
+  --accordion-icon-svg-width: 1em;
+  --accordion-border-width: 1px;
+
+  background-color: #f5f5f7;
+  border-radius: 28px;
+}
+.accordion {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  padding: 30px 45px;
+}
+
+.accordion-item {
+  color: var(--sk-body-text-color, rgb(29, 29, 31));
+  font-style: normal;
+  font-synthesis: none;
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  border-color: var(--accordion-border-color);
+  font-size: 21px;
+  line-height: 1.1904761905;
+  font-weight: 600;
+  letter-spacing: 0.011em;
+  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  /* border-top: none; */
+  border-color: var(--accordion-border-color);
+  border-top: var(--accordion-border-width) solid var(--accordion-border-color);
+}
+
+.accordion-item:first-child {
+  border-top: none;
+}
+.accordion-title {
+  list-style: none;
+  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  /* --accordion-border-width: 0; */
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  color: var(--sk-headline-text-color, rgb(29, 29, 31));
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  pointer-events: none;
+}
+
+.accordion-button {
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  /* box-sizing: initial; */
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: inherit;
+  overflow: visible;
+  vertical-align: inherit;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: inherit;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  padding-top: var(--accordion-button-padding-top);
+  padding-bottom: var(--accordion-button-padding-bottom);
+  align-items: center;
+}
+
+.accordion-icon {
+  pointer-events: none;
+  cursor: pointer;
+  font: inherit;
+  line-height: inherit;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: inherit;
+  margin: 0;
+  transition: color 100ms linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--accordion-icon-color);
+  width: var(--accordion-icon-width);
+  height: var(--accordion-icon-height);
+  stroke-width: var(--accordion-icon-stroke-width);
+  font-size: 20px;
+}
+
+.accordion-tray {
+  list-style: none;
+  font-size: 21px;
+  line-height: 1.1904761905;
+  font-weight: 600;
+  letter-spacing: 0.011em;
+  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  margin: 0;
+  transition: max-height 1s 0s ease-in-out;
+  overflow: hidden;
+  height: auto;
+  max-height: 0;
+}
+
+.accordion-item:hover .accordion-tray {
+  max-height: 100vh;
+}
+
+.accordion-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding-bottom: 1em;
+}
+
+.accordion-paragraph-text {
+  color: var(--sk-body-text-color);
+  font-size: 17px;
+  line-height: 1.4705882353;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  pointer-events: none;
+}
+
+.image-container img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.accordions > input {
+  appearance: unset;
+  visibility: hidden;
+  display: none;
+}
+
+.accordions > input ~ button {
+  padding: 1rem 0;
+}
+
+.accord-wrapper {
+  padding: 1.5rem 2.5rem;
+}
+
+.accord-wrapper .accordions {
+  display: block;
+  border-bottom: 1px solid rgba(104, 104, 104, 0.606);
+}
+.accordions > input ~ .accordion-content-wrapper {
+  --transition-duration: 1s;
+  --max-height: 100vh;
+  padding: 0;
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+  /* transition: all 0.5s 0s ease-in-out; */
+  transition: all var(--transition-duration) 0s ease-in-out;
+}
+.accordions > input:checked ~ .accordion-content-wrapper {
+  max-height: var(--max-height, 100px);
+}
+
+.accordion-content-wrapper > :last-child {
+  padding-bottom: 1rem;
+}
