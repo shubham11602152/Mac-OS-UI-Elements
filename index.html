@@ -23,6 +23,7 @@
   </head>
   <style>
     :root {
+      --text-faded: #a0a0a0;
       font-size: 16px;
       color: #fff;
 
@@ -57,6 +58,11 @@
 
     ul {
       list-style-type: none;
+    }
+    p {
+      font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica,
+        Arial;
+      color: var(--text-faded);
     }
 
     h1 {
@@ -437,64 +443,67 @@
             class="accordion-item column expanded"
             data-accordion-item="accordion-item-mac"
           >
-            <h3 class="accordion-title">
-              <button
-                class="accordion-button"
-                data-accordion-trigger=""
-                aria-controls="accordion-item-mac-tray"
-                id="accordion-item-mac-button"
-                data-analytics-intrapage-link=""
-                data-analytics-title="open accordion - iphone and mac"
-                aria-expanded="true"
-              >
-                <span class="accordion-title-text"> iPhone and Mac</span>
-                <span class="accordion-icon" data-accordion-icon=""
-                  ><svg class="accordion-icon-svg" viewBox="0 0 17 8.85">
-                    <polyline
-                      data-accordion-icon-shape=""
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      fill="none"
-                      fill-rule="evenodd"
-                      points="15 7.72 8.5 1.13 2 7.72"
-                    >
-                      <animate
-                        data-accordion-animate="expand"
-                        attributeName="points"
-                        values="15 1.13 8.5 7.72 2 1.13;
+            <input type="radio" name="accordion" id="acc-1" />
+            <label for="acc-1">
+              <h3 class="accordion-title">
+                <button
+                  class="accordion-button"
+                  data-accordion-trigger=""
+                  aria-controls="accordion-item-mac-tray"
+                  id="accordion-item-mac-button"
+                  data-analytics-intrapage-link=""
+                  data-analytics-title="open accordion - iphone and mac"
+                  aria-expanded="true"
+                >
+                  <span class="accordion-title-text"> iPhone and Mac</span>
+                  <span class="accordion-icon" data-accordion-icon=""
+                    ><svg class="accordion-icon-svg" viewBox="0 0 17 8.85">
+                      <polyline
+                        data-accordion-icon-shape=""
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                        fill-rule="evenodd"
+                        points="15 7.72 8.5 1.13 2 7.72"
+                      >
+                        <animate
+                          data-accordion-animate="expand"
+                          attributeName="points"
+                          values="15 1.13 8.5 7.72 2 1.13;
         15.85 4.42 8.5 4.42 1.15 4.42;
         15 7.72 8.5 1.13 2 7.72"
-                        dur="320ms"
-                        begin="indefinite"
-                        fill="freeze"
-                        keyTimes="0;
+                          dur="320ms"
+                          begin="indefinite"
+                          fill="freeze"
+                          keyTimes="0;
         0.5;
         1"
-                        calcMode="spline"
-                        keySplines="0.12, 0, 0.38, 0;
+                          calcMode="spline"
+                          keySplines="0.12, 0, 0.38, 0;
           0.2, 1, 0.68, 1"
-                      ></animate>
-                      <animate
-                        data-accordion-animate="collapse"
-                        attributeName="points"
-                        values="15 7.72 8.5 1.13 2 7.72;
+                        ></animate>
+                        <animate
+                          data-accordion-animate="collapse"
+                          attributeName="points"
+                          values="15 7.72 8.5 1.13 2 7.72;
         15.85 4.42 8.5 4.42 1.15 4.42;
         15 1.13 8.5 7.72 2 1.13"
-                        dur="320ms"
-                        begin="indefinite"
-                        fill="freeze"
-                        keyTimes="0;
+                          dur="320ms"
+                          begin="indefinite"
+                          fill="freeze"
+                          keyTimes="0;
         0.5;
         1"
-                        calcMode="spline"
-                        keySplines="0.2, 0, 0.68, 0;
+                          calcMode="spline"
+                          keySplines="0.2, 0, 0.68, 0;
           0.2, 1, 0.68, 1"
-                      ></animate>
-                    </polyline></svg
-                ></span>
-              </button>
-            </h3>
+                        ></animate>
+                      </polyline></svg
+                  ></span>
+                </button>
+              </h3>
+            </label>
             <div
               id="accordion-item-mac-tray"
               aria-labelledby="accordion-item-mac-button"
@@ -535,67 +544,70 @@
             class="accordion-item column collapsed"
             data-accordion-item="accordion-item-watch"
           >
-            <h3 class="accordion-title">
-              <button
-                class="accordion-button"
-                data-accordion-trigger=""
-                aria-controls="accordion-item-watch-tray"
-                id="accordion-item-watch-button"
-                data-analytics-intrapage-link=""
-                data-analytics-title="open accordion - iphone and apple watch"
-                aria-expanded="false"
-                data-analytics-click="prop3:open accordion - iphone and apple watch"
-              >
-                <span class="accordion-title-text">
-                  iPhone and Apple&nbsp;Watch</span
+            <input type="radio" name="accordion" id="acc-2" />
+            <label for="acc-2">
+              <h3 class="accordion-title">
+                <button
+                  class="accordion-button"
+                  data-accordion-trigger=""
+                  aria-controls="accordion-item-watch-tray"
+                  id="accordion-item-watch-button"
+                  data-analytics-intrapage-link=""
+                  data-analytics-title="open accordion - iphone and apple watch"
+                  aria-expanded="false"
+                  data-analytics-click="prop3:open accordion - iphone and apple watch"
                 >
-                <span class="accordion-icon" data-accordion-icon=""
-                  ><svg class="accordion-icon-svg" viewBox="0 0 17 8.85">
-                    <polyline
-                      data-accordion-icon-shape=""
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      fill="none"
-                      fill-rule="evenodd"
-                      points="15 1.13 8.5 7.72 2 1.13"
-                    >
-                      <animate
-                        data-accordion-animate="expand"
-                        attributeName="points"
-                        values="15 1.13 8.5 7.72 2 1.13;
+                  <span class="accordion-title-text">
+                    iPhone and Apple&nbsp;Watch</span
+                  >
+                  <span class="accordion-icon" data-accordion-icon=""
+                    ><svg class="accordion-icon-svg" viewBox="0 0 17 8.85">
+                      <polyline
+                        data-accordion-icon-shape=""
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                        fill-rule="evenodd"
+                        points="15 1.13 8.5 7.72 2 1.13"
+                      >
+                        <animate
+                          data-accordion-animate="expand"
+                          attributeName="points"
+                          values="15 1.13 8.5 7.72 2 1.13;
         15.85 4.42 8.5 4.42 1.15 4.42;
         15 7.72 8.5 1.13 2 7.72"
-                        dur="320ms"
-                        begin="indefinite"
-                        fill="freeze"
-                        keyTimes="0;
+                          dur="320ms"
+                          begin="indefinite"
+                          fill="freeze"
+                          keyTimes="0;
         0.5;
         1"
-                        calcMode="spline"
-                        keySplines="0.12, 0, 0.38, 0;
+                          calcMode="spline"
+                          keySplines="0.12, 0, 0.38, 0;
           0.2, 1, 0.68, 1"
-                      ></animate>
-                      <animate
-                        data-accordion-animate="collapse"
-                        attributeName="points"
-                        values="15 7.72 8.5 1.13 2 7.72;
+                        ></animate>
+                        <animate
+                          data-accordion-animate="collapse"
+                          attributeName="points"
+                          values="15 7.72 8.5 1.13 2 7.72;
         15.85 4.42 8.5 4.42 1.15 4.42;
         15 1.13 8.5 7.72 2 1.13"
-                        dur="320ms"
-                        begin="indefinite"
-                        fill="freeze"
-                        keyTimes="0;
+                          dur="320ms"
+                          begin="indefinite"
+                          fill="freeze"
+                          keyTimes="0;
         0.5;
         1"
-                        calcMode="spline"
-                        keySplines="0.2, 0, 0.68, 0;
+                          calcMode="spline"
+                          keySplines="0.2, 0, 0.68, 0;
           0.2, 1, 0.68, 1"
-                      ></animate>
-                    </polyline></svg
-                ></span>
-              </button>
-            </h3>
+                        ></animate>
+                      </polyline></svg
+                  ></span>
+                </button>
+              </h3>
+            </label>
             <div
               id="accordion-item-watch-tray"
               aria-labelledby="accordion-item-watch-button"
@@ -645,65 +657,68 @@
             class="accordion-item column collapsed"
             data-accordion-item="accordion-item-airpods"
           >
-            <h3 class="accordion-title">
-              <button
-                class="accordion-button"
-                data-accordion-trigger=""
-                aria-controls="accordion-item-airpods-tray"
-                id="accordion-item-airpods-button"
-                data-analytics-intrapage-link=""
-                data-analytics-title="open accordion - iphone and airpods"
-                aria-expanded="false"
-                data-analytics-click="prop3:open accordion - iphone and airpods"
-              >
-                <span class="accordion-title-text"> iPhone and AirPods</span>
-                <span class="accordion-icon" data-accordion-icon=""
-                  ><svg class="accordion-icon-svg" viewBox="0 0 17 8.85">
-                    <polyline
-                      data-accordion-icon-shape=""
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      fill="none"
-                      fill-rule="evenodd"
-                      points="15 1.13 8.5 7.72 2 1.13"
-                    >
-                      <animate
-                        data-accordion-animate="expand"
-                        attributeName="points"
-                        values="15 1.13 8.5 7.72 2 1.13;
+            <input type="radio" name="accordion" id="acc-3" />
+            <label for="acc-3">
+              <h3 class="accordion-title">
+                <button
+                  class="accordion-button"
+                  data-accordion-trigger=""
+                  aria-controls="accordion-item-airpods-tray"
+                  id="accordion-item-airpods-button"
+                  data-analytics-intrapage-link=""
+                  data-analytics-title="open accordion - iphone and airpods"
+                  aria-expanded="false"
+                  data-analytics-click="prop3:open accordion - iphone and airpods"
+                >
+                  <span class="accordion-title-text"> iPhone and AirPods</span>
+                  <span class="accordion-icon" data-accordion-icon=""
+                    ><svg class="accordion-icon-svg" viewBox="0 0 17 8.85">
+                      <polyline
+                        data-accordion-icon-shape=""
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        fill="none"
+                        fill-rule="evenodd"
+                        points="15 1.13 8.5 7.72 2 1.13"
+                      >
+                        <animate
+                          data-accordion-animate="expand"
+                          attributeName="points"
+                          values="15 1.13 8.5 7.72 2 1.13;
         15.85 4.42 8.5 4.42 1.15 4.42;
         15 7.72 8.5 1.13 2 7.72"
-                        dur="320ms"
-                        begin="indefinite"
-                        fill="freeze"
-                        keyTimes="0;
+                          dur="320ms"
+                          begin="indefinite"
+                          fill="freeze"
+                          keyTimes="0;
         0.5;
         1"
-                        calcMode="spline"
-                        keySplines="0.12, 0, 0.38, 0;
+                          calcMode="spline"
+                          keySplines="0.12, 0, 0.38, 0;
           0.2, 1, 0.68, 1"
-                      ></animate>
-                      <animate
-                        data-accordion-animate="collapse"
-                        attributeName="points"
-                        values="15 7.72 8.5 1.13 2 7.72;
+                        ></animate>
+                        <animate
+                          data-accordion-animate="collapse"
+                          attributeName="points"
+                          values="15 7.72 8.5 1.13 2 7.72;
         15.85 4.42 8.5 4.42 1.15 4.42;
         15 1.13 8.5 7.72 2 1.13"
-                        dur="320ms"
-                        begin="indefinite"
-                        fill="freeze"
-                        keyTimes="0;
+                          dur="320ms"
+                          begin="indefinite"
+                          fill="freeze"
+                          keyTimes="0;
         0.5;
         1"
-                        calcMode="spline"
-                        keySplines="0.2, 0, 0.68, 0;
+                          calcMode="spline"
+                          keySplines="0.2, 0, 0.68, 0;
           0.2, 1, 0.68, 1"
-                      ></animate>
-                    </polyline></svg
-                ></span>
-              </button>
-            </h3>
+                        ></animate>
+                      </polyline></svg
+                  ></span>
+                </button>
+              </h3>
+            </label>
             <div
               id="accordion-item-airpods-tray"
               aria-labelledby="accordion-item-airpods-button"
@@ -746,7 +761,7 @@
           <input type="radio" name="name" id="accordion1" checked />
           <button class="accordion-button">
             <h3>IPhone 16</h3>
-            <span>+</span>
+            <span class="icon">+</span>
           </button>
           <div class="accordion-content-wrapper">
             <div class="accordion-content">
@@ -756,14 +771,17 @@
                 provide the best listening experience across different
                 environments and interactions throughout the day.
               </p>
+              <img
+                src="https://www.apple.com/newsroom/images/2024/09/apple-introduces-iphone-16-and-iphone-16-plus/article/geo/Apple-iPhone-16-finish-lineup-geo-240909_big.jpg.large_2x.jpg"
+              />
             </div>
           </div>
         </label>
         <label for="accordion3" class="accordions">
           <input type="radio" name="name" id="accordion3" />
           <button class="accordion-button">
-            <h3>IPhone 14</h3>
-            <span>+</span>
+            <h3>IPhone 15</h3>
+            <span class="icon">+</span>
           </button>
           <div class="accordion-content-wrapper">
             <div class="accordion-content">
@@ -777,14 +795,18 @@
                 best listening experience across different environments and
                 interactions throughout the day.
               </p>
+              <img
+                src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-max-2.jpg"
+                alt=""
+              />
             </div>
           </div>
         </label>
         <label for="accordion2" class="accordions">
           <input type="radio" name="name" id="accordion2" />
           <button class="accordion-button">
-            <h3>IPhone 15</h3>
-            <span>+</span>
+            <h3>IPhone 14</h3>
+            <span class="icon">+</span>
           </button>
           <div class="accordion-content-wrapper">
             <div class="accordion-content">
