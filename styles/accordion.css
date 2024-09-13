@@ -203,7 +203,7 @@
 
 .accordions > input ~ .accordion-content-wrapper {
   --transition-duration: 1s;
-  --max-height: 100vh;
+  --max-height: auto;
 
   padding: 0;
   height: auto;
@@ -213,7 +213,7 @@
   /* transition: all var(--transition-duration) 0s ease-in-out; */
 }
 .accordions > input:checked ~ .accordion-content-wrapper {
-  max-height: var(--max-height, 100px);
+  max-height: var(--max-height, auto);
 }
 
 .accordion-content-wrapper > :last-child {
@@ -227,4 +227,10 @@
   border-radius: 28px;
   max-height: 500px;
   padding: 1.5rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .accord-wrapper {
+    padding: 1rem 1.25rem;
+  }
 }
