@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>MacOS UI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,8 +26,8 @@
       --text-faded: #a0a0a0;
       font-size: 16px;
       color: #fff;
-
-      font-family: "Urbanist", sans-serif;
+      font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica,
+        Arial, sans-serif;
       font-optical-sizing: auto;
       font-weight: 400;
       font-style: normal;
@@ -79,6 +79,38 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
+
+    h2 {
+      font-family: "Urbanist", sans-serif;
+      font-weight: 500;
+      font-size: 3rem;
+      line-height: 3rem;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .colorful-text {
+      display: inline-block;
+      background-size: 200%;
+      background-position: 0 0;
+      background-image: linear-gradient(
+        to right,
+        #87a2ff,
+        #c4d7ff,
+        #ffd7c4,
+        #fff4b5
+      );
+      color: transparent;
+      background-clip: text;
+      animation: text-bg-anim 4s ease-in-out 0s infinite alternate;
+    }
+    @keyframes text-bg-anim {
+      from {
+        background-position: 0 0;
+        background-position: 100% 0;
+      }
+    }
+
     .tiny5-regular {
       font-family: "Urbanist", sans-serif;
       font-optical-sizing: auto;
@@ -122,6 +154,36 @@
       to {
         transform: rotate(360deg);
       }
+    }
+
+    .draggable {
+      position: relative;
+      height: 50vh;
+      width: 100%;
+    }
+
+    .card {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 200px;
+      height: 150px;
+      background-color: tomato;
+      border-radius: 28px;
+      mix-blend-mode: color;
+      cursor: pointer;
+    }
+
+    #masked-shadow {
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+      height: clamp(80px, 10vh, 200px);
+      mask-image: linear-gradient(to top, rgb(0, 0, 0) 25%, transparent);
+      background: linear-gradient(0deg, black, transparent);
+      backdrop-filter: blur(5px);
+      pointer-events: none;
+      z-index: 1000;
     }
 
     @media only screen and (max-width: 600px) {
@@ -181,7 +243,6 @@
         </div>
       </div>
     </div>
-
     <section>
       <h1 class="tiny5-regular">
         <div>
@@ -321,13 +382,13 @@
         <path
           id="lineAC"
           d="M 30 180 q 150 -250 300 0"
-          stroke="blue"
+          stroke="transparent"
           stroke-width="2"
           fill="none"
         />
         <text style="fill: #fff; font-size: 25px">
-          <textPath href="#lineAC" startOffset="50">
-            Mac OS styled components
+          <textPath href="#lineAC" startOffset="20">
+            MacOS Inspired UI Components
           </textPath>
         </text>
       </svg>
@@ -431,6 +492,7 @@
     </section>
 
     <section>
+      <h2 class="colorful-text">Accordions</h2>
       <div class="accordion-wrapper">
         <ul
           class="accordion"
@@ -468,6 +530,7 @@
                         points="15 7.72 8.5 1.13 2 7.72"
                       >
                         <animate
+                          id="expand-animation"
                           data-accordion-animate="expand"
                           attributeName="points"
                           values="15 1.13 8.5 7.72 2 1.13;
@@ -484,6 +547,7 @@
           0.2, 1, 0.68, 1"
                         ></animate>
                         <animate
+                          id="collapse-animation"
                           data-accordion-animate="collapse"
                           attributeName="points"
                           values="15 7.72 8.5 1.13 2 7.72;
@@ -572,6 +636,7 @@
                         points="15 1.13 8.5 7.72 2 1.13"
                       >
                         <animate
+                          id="expand-animation"
                           data-accordion-animate="expand"
                           attributeName="points"
                           values="15 1.13 8.5 7.72 2 1.13;
@@ -588,6 +653,7 @@
           0.2, 1, 0.68, 1"
                         ></animate>
                         <animate
+                          id="collapse-animation"
                           data-accordion-animate="collapse"
                           attributeName="points"
                           values="15 7.72 8.5 1.13 2 7.72;
@@ -683,6 +749,7 @@
                         points="15 1.13 8.5 7.72 2 1.13"
                       >
                         <animate
+                          id="expand-animation"
                           data-accordion-animate="expand"
                           attributeName="points"
                           values="15 1.13 8.5 7.72 2 1.13;
@@ -699,6 +766,7 @@
           0.2, 1, 0.68, 1"
                         ></animate>
                         <animate
+                          id="collapse-animation"
                           data-accordion-animate="collapse"
                           attributeName="points"
                           values="15 7.72 8.5 1.13 2 7.72;
@@ -855,6 +923,7 @@
         </label>
       </div>
     </section>
+    <div id="masked-shadow"></div>
     <div id="dock">
       <ul>
         <li>
