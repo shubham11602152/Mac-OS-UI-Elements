@@ -1,0 +1,9 @@
+/* View box model */
+* {
+  outline: 1px solid red;
+}
+
+/* Unblock "under-construction" content */
+section[class="under-construction"] {
+  display: block;
+}

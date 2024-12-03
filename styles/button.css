@@ -1,0 +1,96 @@
+button,
+.button {
+  --sk-button-padding-horizontal: 22px;
+  --sk-button-padding-vertical: 12px;
+  --sk-button-min-width-basis: 70px;
+  --sk-button-margin-horizontal: 18px;
+  --sk-button-margin-vertical: 18px;
+
+  --sk-button-color: rgb(255, 255, 255);
+  --sk-button-color-hover: var(--sk-button-color);
+  --sk-button-color-active: var(--sk-button-color-hover);
+  --sk-button-disabled-opacity: var(--sk-link-disabled-opacity, 0.42);
+  --sk-button-border-color: transparent;
+  --sk-button-border-radius: 980px;
+  --sk-button-margin-horizontal: 14px;
+  --sk-button-margin-vertical: 14px;
+  --sk-button-min-width-basis: 60px;
+  --sk-button-padding-horizontal: 16px;
+  --sk-button-padding-vertical: 9px;
+  --sk-button-border-width: 1px;
+  --sk-button-box-sizing: content-box;
+  --sk-button-width: auto;
+  --sk-button-display: flex;
+
+  position: relative;
+  font-size: 14px;
+  line-height: 1.2857742857;
+  font-weight: 400;
+  letter-spacing: -0.016em;
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  background: var(--sk-button-background);
+  color: var(--sk-button-color);
+  padding-block: calc(
+    var(--sk-button-padding-vertical) - var(--sk-button-border-width)
+  );
+  padding-inline: calc(
+    var(--sk-button-padding-horizontal) - var(--sk-button-border-width)
+  );
+  border-radius: var(--sk-button-border-radius);
+  border: var(--sk-button-border-width) solid var(--sk-button-border-color);
+  width: var(--sk-button-width);
+  min-width: calc(
+    var(--sk-button-min-width-basis) - var(--sk-button-padding-horizontal) * 2
+  );
+  cursor: pointer;
+  display: var(--sk-button-display);
+  align-items: center;
+  gap: 8px;
+  box-sizing: var(--sk-button-box-sizing);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  --sk-button-background: rgb(0, 113, 227);
+  --sk-button-background-hover: #0076df;
+  --sk-button-background-active: #006edb;
+  font-size: 17px;
+  line-height: 1.1764805882;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+}
+
+:is(button, .button):hover {
+  background: var(--sk-button-background-hover, var(--sk-button-background));
+  color: var(--sk-button-color-hover, var(--sk-button-color));
+  text-decoration: none;
+  border-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  z-index: 1;
+}
+
+:is(button, .button).progress::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(0, 100%);
+
+  width: 100%;
+  height: 100%;
+  background-color: #5eb4ffae;
+  /* mix-blend-mode: exclusion; */
+  animation: slideup 1s ease-in-out 0s forwards;
+  z-index: 0;
+}
+
+@keyframes slideup {
+  from {
+    transform: translate(0, 100%);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}

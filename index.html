@@ -20,17 +20,30 @@
     <link rel="stylesheet" href="styles/dock.css" />
     <link rel="stylesheet" href="styles/notification.css" />
     <link rel="stylesheet" href="styles/accordion.css" />
+    <link rel="stylesheet" href="styles/button.css" />
+    <!-- INFO: uncomment below link tag when in development (debug) mode -->
+    <!-- <link rel="stylesheet" href="styles/debug.css" /> -->
   </head>
   <style>
     :root {
-      --text-faded: #a0a0a0;
+      --text-primary: #303030;
+      --text-dim: #424242;
+      --background: #efefef;
+      --notification-bg: #ababab5e;
+
       font-size: 16px;
-      color: #fff;
+      color: var(--text-dim);
       font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica,
         Arial, sans-serif;
       font-optical-sizing: auto;
       font-weight: 400;
       font-style: normal;
+      &:has(#theme:checked) {
+        --text-primary: #ffffffe6;
+        --text-dim: #a0a0a0;
+        --background: #000;
+        --notification-bg: #25252570;
+      }
     }
 
     html,
@@ -39,7 +52,9 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      /* outline: 1px solid red; */
+
+      /* transition-duration: 0.1s !important;
+      transition-property: color, background-image, background, border, outline !important; */
     }
 
     body {
@@ -47,13 +62,22 @@
       min-height: 120vh;
       display: grid;
       place-items: center;
-      background-color: black;
+      background-color: var(--background);
       padding: 150px 0;
     }
 
     section {
       padding: 1rem;
       max-width: 1024px;
+      min-height: 60vh;
+    }
+
+    section[class="center"] {
+      display: grid;
+      place-content: center;
+    }
+    section[class="under-construction"] {
+      display: none;
     }
 
     ul {
@@ -62,7 +86,7 @@
     p {
       font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica,
         Arial;
-      color: var(--text-faded);
+      color: var(--text-dim);
     }
 
     h1 {
@@ -70,6 +94,7 @@
       text-align: center;
       line-height: 1.5em;
       margin: 1rem 0;
+      color: var(--text-primary);
     }
 
     h1 > div {
@@ -89,7 +114,15 @@
       margin-bottom: 1.5rem;
     }
 
+    .slogan {
+      font-size: 2rem;
+      font-weight: 300;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
     .colorful-text {
+      position: relative;
       display: inline-block;
       background-size: 200%;
       background-position: 0 0;
@@ -103,7 +136,9 @@
       color: transparent;
       background-clip: text;
       animation: text-bg-anim 4s ease-in-out 0s infinite alternate;
+      filter: drop-shadow(1px 1px 1px #00000029);
     }
+
     @keyframes text-bg-anim {
       from {
         background-position: 0 0;
@@ -130,7 +165,7 @@
       aspect-ratio: 1/1;
       border-radius: 50%;
       object-fit: fill;
-      border: 5px solid black;
+      border: 5px solid var(--background);
       animation: rotate-anim 8s 0s linear infinite;
     }
 
@@ -179,8 +214,8 @@
       bottom: 0px;
       width: 100%;
       height: clamp(80px, 10vh, 200px);
-      mask-image: linear-gradient(to top, rgb(0, 0, 0) 25%, transparent);
-      background: linear-gradient(0deg, black, transparent);
+      mask-image: linear-gradient(to top, var(--background) 25%, transparent);
+      background: linear-gradient(0deg, var(--background), transparent);
       backdrop-filter: blur(5px);
       pointer-events: none;
       z-index: 1000;
@@ -198,6 +233,18 @@
         width: 2em;
         height: 2em;
       }
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    #progress-bar {
+      margin-top: 10px;
+      height: 5px;
+      width: 0;
+      background-color: #0071e3;
+      transition: width 0.2s ease;
     }
   </style>
   <body>
@@ -243,11 +290,11 @@
         </div>
       </div>
     </div>
-    <section>
+    <section class="center">
       <h1 class="tiny5-regular">
         <div>
           Design &
-          <input type="checkbox" data-direction="vertical" checked />
+          <input type="checkbox" data-direction="vertical" id="theme" checked />
           Dev
           <div class="inlineImg">
             <img
@@ -378,6 +425,10 @@
         </div>
       </h1>
 
+      <h3 class="slogan">Welcome to my <i>experimental UI playground</i></h3>
+    </section>
+
+    <section>
       <svg height="200" width="350" xmlns="http://www.w3.org/2000/svg">
         <path
           id="lineAC"
@@ -386,7 +437,7 @@
           stroke-width="2"
           fill="none"
         />
-        <text style="fill: #fff; font-size: 25px">
+        <text style="fill: var(--text-dim); font-size: 25px">
           <textPath href="#lineAC" startOffset="20">
             MacOS Inspired UI Components
           </textPath>
@@ -492,7 +543,7 @@
     </section>
 
     <section>
-      <h2 class="colorful-text">Accordions</h2>
+      <h2 class="colorful-text" data-text="Accordions">Accordions</h2>
       <div class="accordion-wrapper">
         <ul
           class="accordion"
@@ -923,6 +974,27 @@
         </label>
       </div>
     </section>
+    <section class="under-construction">
+      <button data-type="hold">submit</button>
+
+      <button id="hold-button">
+        <svg width="20" height="20">
+          <circle
+            id="progress-bar"
+            cx="10"
+            cy="10"
+            r="8"
+            stroke-linecap="round"
+            stroke="#fff"
+            stroke-width="2"
+            stroke-dasharray="20"
+            stroke-dashoffset="0"
+            fill="transparent"
+          /></svg
+        >Hold to Submit
+      </button>
+      <!-- <div id="progress-bar"></div> -->
+    </section>
     <div id="masked-shadow"></div>
     <div id="dock">
       <ul>
@@ -1014,4 +1086,40 @@
   <script src="scripts/dock.js" defer></script>
   <!-- <script src="scripts/notification.js" defer></script> -->
   <script type="module" src="scripts/accordion.js" defer></script>
+  <script>
+    const button = document.getElementById("hold-button");
+    const progressBar = document.getElementById("progress-bar");
+    console.log({ progressBar });
+    <!-- const form = document.getElementById("submit-form"); -->
+
+    let holdTime = 2000; // 2 seconds to hold
+    let holdProgress = 0;
+    let circumference = 2 * 3.14 * 8;
+
+    let holdInterval = null;
+
+    button.addEventListener("mousedown", startHold);
+    button.addEventListener("mouseup", stopHold);
+    button.addEventListener("mouseleave", stopHold);
+
+    function startHold() {
+      holdInterval = setInterval(() => {
+        holdProgress += 100; // Increase progress by 100ms intervals
+        let offset = circumference * ((100 - holdProgress) / 100);
+        progressBar.style.strokeDashoffset = `${(offset / holdTime) * 100}`;
+
+        if (holdProgress >= holdTime) {
+          clearInterval(holdInterval);
+          button.disabled = true;
+          progressBar.style.width = `${circumference}`;
+        }
+      }, 100);
+    }
+
+    function stopHold() {
+      clearInterval(holdInterval);
+      holdProgress = 0;
+      progressBar.style.width = "0%";
+    }
+  </script>
 </html>

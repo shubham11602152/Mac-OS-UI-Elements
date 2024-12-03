@@ -170,7 +170,7 @@
 .accord-wrapper {
   --accordion-border-color: rgba(149, 149, 149, 0.716);
   --accordion-border-width: 1px;
-  --sk-headline-text-color: rgb(218, 218, 218);
+  --sk-headline-text-color: var(--text-dim);
   --sk-body-text-color: rgba(155, 155, 155, 0.817);
   padding: 1.5rem 2.5rem;
 }
@@ -179,6 +179,7 @@
   position: relative;
   display: block;
   border-top: var(--accordion-border-width) solid var(--accordion-border-color);
+  cursor: pointer;
 }
 
 .accord-wrapper .accordions::after {
@@ -187,8 +188,8 @@
   bottom: 0;
   width: 100%;
   height: 2rem;
-  mask-image: linear-gradient(to top, rgb(0, 0, 0) 25%, transparent);
-  background: linear-gradient(to top, rgb(0, 0, 0), transparent);
+  mask-image: linear-gradient(to top, var(--background) 25%, transparent);
+  background: linear-gradient(to top, var(--background), transparent);
   backdrop-filter: blur(5px);
   pointer-events: none;
 }
@@ -200,8 +201,9 @@
 }
 
 .accordions > input ~ button {
-  color: var(--sk-headline-text-color);
+  color: var(--text-primary);
   padding: 1rem 0;
+  cursor: pointer;
 }
 
 .accordions > input ~ button .icon {
@@ -226,6 +228,8 @@
   max-height: 0;
   overflow: hidden;
   transition: all 0.8s 0s ease-in-out;
+  color: var(--sk-body-text-color);
+
   /* transition: all var(--transition-duration) 0s ease-in-out; */
 }
 .accordions > input:checked ~ .accordion-content-wrapper {
